@@ -27,13 +27,13 @@
                         </v-col>
                     </v-row>
 
-                    <v-btn href="https://imagenes.neuroar.com.co/static/paciente9.pdf" target="_blank" color="red"
+                    <v-btn href="https://imagenes.neuroar.com.co/static/paciente9.pdf" target="_blank" color="error"
                         variant="elevated">
                         descargar reporte IA
                     </v-btn>
 
                     <!-- <v-btn :href="`https://imagenes.neuroar.com.co/static/paciente${selectedPaciente}.pdf`"
-                        target="_blank" color="red" variant="elevated">
+                        target="_blank" color="error" variant="elevated">
                         Descargar reporte IA
                     </v-btn> -->
                 </template>

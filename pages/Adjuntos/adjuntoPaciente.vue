@@ -4,7 +4,7 @@
             <v-card-title>
                 <div class="d-flex align-center justify-space-between w-100">
                     <div class="d-flex align-center">
-                        <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                        <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                         <v-divider inset vertical class="ml-6"></v-divider>
                         <strong class="ml-4 text-h5 font-weight-bold">Adjuntos Por Paciente</strong>
                     </div>
@@ -20,7 +20,7 @@
                     </v-col>
 
                     <v-col cols="3">
-                        <v-btn color="red" size="small" @click="limpiar()">Limpiar</v-btn>
+                        <v-btn color="secondary" variant="outlined" size="small" @click="limpiar()">Limpiar</v-btn>
                     </v-col>
                 </v-row>
 
@@ -43,7 +43,7 @@
                             <v-tooltip activator="parent" location="bottom">Descargar Adjunto</v-tooltip>
                         </v-btn>
 
-                        <v-btn icon color="red" size="small" @click="eliminarAdjunto(item.id)">
+                        <v-btn icon color="error" size="small" @click="eliminarAdjunto(item.id)">
                             <v-icon>mdi-delete</v-icon>
                             <v-tooltip activator="parent" location="bottom">Eliminar Adjunto</v-tooltip>
                         </v-btn>
@@ -184,9 +184,9 @@
                     text: 'Eliminarás este adjunto',
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: "#22bb33",
+                    confirmButtonColor: 'rgb(var(--v-theme-primary))',
                     confirmButtonText: 'Sí, eliminar',
-                    cancelButtonColor: "#d33",
+                    cancelButtonColor: 'rgb(var(--v-theme-error))',
                     cancelButtonText: 'Cancelar',
                 });
 

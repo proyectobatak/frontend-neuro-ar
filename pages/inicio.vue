@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-alert text="Este es un futuro Dashboard" title="Estás en NeuroAR" type="success"></v-alert>
+        <v-alert text="Este es un futuro Dashboard" title="Estás en NeuroAr" type="info"></v-alert>
     </div>
 </template>
 

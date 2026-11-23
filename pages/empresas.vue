@@ -4,7 +4,7 @@
             <v-card-title>
                 <div class="d-flex align-center justify-space-between w-100">
                     <div class="d-flex align-center">
-                        <img src="/public/imagenes/neuroar.png" alt="Logo" height="70px" width="70px">
+                        <img src="/imagenes/neuroar-claro.png" alt="Logo" height="70px" width="70px">
                         <v-divider inset vertical class="ml-6"></v-divider>
                         <strong class="ml-4 text-h5 font-weight-bold">Clientes</strong>
                     </div>
@@ -30,7 +30,7 @@
 
                     <!-- Estado con Chip -->
                     <template v-slot:[`item.estado_id`]="{ item }">
-                        <v-chip :color="item.estado_id === 1 ? 'green' : 'red'" label variant="flat" size="small">
+                        <v-chip :color="item.estado_id === 1 ? 'success' : 'error'" label variant="flat" size="small">
                             {{ item.estado_id === 1 ? 'Activo' : 'Inactivo' }}
                         </v-chip>
                     </template>
@@ -43,7 +43,7 @@
 
                             <v-tooltip text="Cambiar estado">
                                 <template #activator="{ props }">
-                                    <v-icon v-bind="props" :color="item.estado_id === 1 ? 'red' : 'green'" size="small"
+                                    <v-icon v-bind="props" :color="item.estado_id === 1 ? 'error' : 'success'" size="small"
                                         :icon="item.estado_id === 1 ? 'mdi-toggle-switch-off' : 'mdi-toggle-switch'"
                                         @click="cambiarEstadoEmpresa(item.id, item.estado_id)">
                                     </v-icon>
@@ -62,7 +62,7 @@
                 <v-card-title>
                     <div class="d-flex align-center justify-space-between w-100">
                         <div class="d-flex align-center">
-                            <img src="/public/imagenes/neuroar.png" alt="Logo" height="50px" width="50px">
+                            <img src="/imagenes/neuroar-claro.png" alt="Logo" height="50px" width="50px">
                             <v-divider inset vertical class="ml-6"></v-divider>
                             <strong class="ml-4 text-h6 font-weight-bold">
                                 {{ modoEdicion ? 'Editar Empresa' : 'Crear Empresa' }}
@@ -87,7 +87,7 @@
                     </v-form>
                 </v-card-text>
                 <v-card-actions>
-                    <v-btn color="red" dark size="small" rounded="lg" variant="flat"
+                    <v-btn color="error" dark size="small" rounded="lg" variant="flat"
                         @click="cerrarDialog()">Cerrar</v-btn>
                     <v-btn :color="modoEdicion ? 'warning' : 'success'" size="small" rounded="lg" variant="flat"
                         @click="guardarEmpresa()" :loading="loadingCrear">Guardar</v-btn>

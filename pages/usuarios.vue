@@ -4,7 +4,7 @@
             <v-card-title>
                 <div class="d-flex align-center justify-space-between w-100">
                     <div class="d-flex align-center">
-                        <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                        <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                         <v-divider inset vertical class="ml-6"></v-divider>
                         <strong class="ml-4 text-h5 font-weight-bold">Usuarios</strong>
                     </div>
@@ -28,7 +28,7 @@
                     <v-col cols="3" class="d-flex align-center">
                         <v-btn color="primary" @click="buscarUsuario()" :loading="loading" class="mr-2">Filtrar usuario
                         </v-btn>
-                        <v-btn color="red" dark @click="limpiarFiltros()">Limpiar</v-btn>
+                        <v-btn color="secondary" variant="outlined" @click="limpiarFiltros()">Limpiar</v-btn>
                     </v-col>
                 </v-row>
             </v-container>
@@ -60,7 +60,7 @@
                         </v-tooltip>
                         <v-tooltip location="top">
                             <template v-slot:activator="{ props }">
-                                <v-icon v-bind="props" color="purple" icon="mdi-table-key" size="small"
+                                <v-icon v-bind="props" color="secondary" icon="mdi-table-key" size="small"
                                     @click="abrirDialogoRoles(item)">
                                 </v-icon>
                             </template>

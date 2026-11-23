@@ -4,7 +4,7 @@
             <v-card-title>
                 <div class="d-flex align-center justify-space-between w-100">
                     <div class="d-flex align-center">
-                        <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                        <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                         <v-divider inset vertical class="ml-6"></v-divider>
                         <strong>Agregar permisos al usuario - {{ datosUsuarios?.name }}</strong>
                     </div>
@@ -20,7 +20,7 @@
 
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="red" dark variant="flat" size="small" @click="cerrarDialog()">Cerrar</v-btn>
+                <v-btn color="error" dark variant="flat" size="small" @click="cerrarDialog()">Cerrar</v-btn>
                 <v-btn color="success" variant="flat" size="small" @click="agregarPermisosUsuario()" :loading="loadingGuardarPermisos">
                     Guardar cambios
                 </v-btn>

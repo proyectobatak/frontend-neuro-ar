@@ -1,5 +1,5 @@
 <template>
-    <v-container class="d-flex justify-center align-center fill-height" style="background-color: #f4f9ff;">
+    <v-container class="d-flex justify-center align-center fill-height">
       <v-card width="500" elevation="12" class="pa-6 rounded-xl">
         <v-card-title class="justify-center text-center flex-column mb-4">
           <v-img src="/imagenes/icono-logo.png" alt="Logo" max-width="80" class="mx-auto mb-2" />

@@ -1,11 +1,11 @@
 <template>
-    <div class="d-flex justify-center align-center" style="min-height: 100vh; background-color: #f4f9ff;">
+    <div class="d-flex justify-center align-center" style="min-height: 100vh;">
       <v-card class="pa-6" max-width="500" elevation="10" rounded="xl">
         <v-card-title class="justify-center">
           <div class="text-center">
             <v-img src="/imagenes/icono-logo.png" alt="Logo" max-width="80" class="mx-auto mb-4" />
             <h2 class="text-h5 font-weight-bold mb-2">Recuperación de Contraseña</h2>
-            <p class="text-subtitle-2 text-grey-darken-1">Ingresa tu correo para recibir un enlace de recuperación</p>
+            <p class="text-subtitle-2 text-medium-emphasis">Ingresa tu correo para recibir un enlace de recuperación</p>
           </div>
         </v-card-title>
   
@@ -34,7 +34,7 @@
         </v-card-text>
   
         <v-card-actions class="justify-center mt-4">
-          <small class="text-caption text-grey">
+          <small class="text-caption text-medium-emphasis">
             Si no recibes el correo, revisa tu carpeta de spam.
           </small>
         </v-card-actions>

@@ -4,7 +4,7 @@
             <v-card-title>
                 <div class="d-flex align-center justify-space-between w-100">
                     <div class="d-flex align-center">
-                        <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                        <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                         <v-divider inset vertical class="ml-6"></v-divider>
                         <strong class="ml-4 text-h5 font-weight-bold">Dependencias</strong>
                     </div>
@@ -35,7 +35,7 @@
                     </template>
 
                     <template v-slot:[`item.estado_id`]="{ item }">
-                        <v-chip :color="item.estado_id == 1 ? 'green' : 'red'" label variant="flat" size="small">
+                        <v-chip :color="item.estado_id == 1 ? 'success' : 'error'" label variant="flat" size="small">
                             {{ item.estado_id == 1 ? 'Activo' : 'Inactivo' }}</v-chip>
                     </template>
 
@@ -50,7 +50,7 @@
                         </v-tooltip>
                         <v-tooltip location="top">
                             <template v-slot:activator="{ props }">
-                                <v-icon v-bind="props" :color="item.estado_id === 1 ? 'green' : 'red'"
+                                <v-icon v-bind="props" :color="item.estado_id === 1 ? 'success' : 'error'"
                                     icon="mdi-toggle-switch" size="small" @click="cambiarEstado(item.id)"
                                     style="cursor: pointer">
                                 </v-icon>
@@ -68,7 +68,7 @@
                     <v-card-title>
                         <div class="d-flex align-center justify-space-between w-100">
                             <div class="d-flex align-center">
-                                <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                                <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                                 <v-divider inset vertical class="ml-6"></v-divider>
                                 <strong class="ml-4 text-h5 font-weight-bold">{{ modoEdicion ? 'Editar dependencias' : 'Crear dependencia' }}</strong>
                             </div>
@@ -83,7 +83,7 @@
                         </v-form>
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn color="red" dark size="small" rounded="lg" variant="flat" @click="cerrarDialogo()">
+                        <v-btn color="error" dark size="small" rounded="lg" variant="flat" @click="cerrarDialogo()">
                             Cerrar
                         </v-btn>
                         <v-btn size="small" :color="modoEdicion ? 'warning' : 'success'" rounded="lg" variant="flat"
@@ -212,9 +212,9 @@
                     text: 'Cambiaras el estado de esta sede.',
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: "#22bb33",
+                    confirmButtonColor: 'rgb(var(--v-theme-primary))',
                     confirmButtonText: 'Sí, cambiar estado',
-                    cancelButtonColor: "#d33",
+                    cancelButtonColor: 'rgb(var(--v-theme-error))',
                     cancelButtonText: 'Cancelar',
                     
                 });

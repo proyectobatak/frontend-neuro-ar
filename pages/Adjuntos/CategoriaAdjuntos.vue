@@ -4,7 +4,7 @@
             <v-card-title>
                 <div class="d-flex align-center justify-space-between w-100">
                     <div class="d-flex align-center">
-                        <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                        <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                         <v-divider inset vertical class="ml-6"></v-divider>
                         <strong class="ml-4 text-h5 font-weight-bold">Categoría Adjuntos</strong>
                     </div>
@@ -57,7 +57,7 @@
                 <v-card-title>
                     <div class="d-flex align-center justify-space-between w-100">
                         <div class="d-flex align-center">
-                            <img src="/public/imagenes/icono-logo.png" alt="Logo" height="50px" width="50px">
+                            <img src="/imagenes/icono-logo.png" alt="Logo" height="50px" width="50px">
                             <v-divider inset vertical class="ml-6"></v-divider>
                             <strong
                                 class="ml-4 text-h6 font-weight-bold">{{ modoEdicion ? 'Editar Categoría' : 'Crear Categoría' }}</strong>
@@ -76,7 +76,7 @@
                     </v-form>
                 </v-card-text>
                 <v-card-actions>
-                    <v-btn color="red" dark size="small" rounded="lg" variant="flat" @click="cerrarDialogo()">
+                    <v-btn color="error" dark size="small" rounded="lg" variant="flat" @click="cerrarDialogo()">
                         Cerrar
                     </v-btn>
                     <v-btn size="small" :color="modoEdicion ? 'warning' : 'success'" rounded="lg" variant="flat"

@@ -8,9 +8,9 @@
                     <div class="semi-circulo"></div>
                     <div class="crear-cuenta">
                         <h2 class="text-h5 font-weight-bold">¿No tienes cuenta?</h2>
-                        <p>Únete a NeuroAR en segundos.</p>
+                        <p>Únete a NeuroAr en segundos.</p>
                         <NuxtLink to="/registro" class="boton-crear-cuenta">
-                            <v-btn color="white" variant="tonal" block>Crear cuenta</v-btn>
+                            <v-btn color="white" variant="outlined" block>Crear cuenta</v-btn>
                         </NuxtLink>
                     </div>
                     <v-img src="/imagenes/andres_login.png" alt="Hombre con VR" :height="'100%'"
@@ -22,7 +22,7 @@
                     <v-form ref="formIncioSesion" class="formulario-login">
                         <v-row class="d-flex flex-column align-center" dense>
                             <v-col cols="12" class="text-center">
-                                <v-img src="/imagenes/neuroar.png" alt="Logo NeuroAR" contain max-height="100"
+                                <v-img src="/imagenes/neuroar-claro.png" alt="Logo NeuroAr" contain max-height="100"
                                     max-width="200" class="mx-auto"></v-img>
                             </v-col>
 
@@ -55,29 +55,25 @@
 
                             <!-- Olvidé contraseña -->
                             <v-col cols="12" class="text-center">
-                                <NuxtLink to="" class="text-caption">
+                                <NuxtLink to="/recuperacionContrasena/validacionEmail" class="text-caption enlace-recuperar">
                                     ¿Has olvidado tu contraseña?
                                 </NuxtLink>
                             </v-col>
 
                             <!-- Botón: Ingresar -->
                             <v-col cols="12" class="text-center">
-                                <v-btn color="blue" rounded="lg" @click="iniciarSesion" :loading="loading">
+                                <v-btn color="primary" size="large" block @click="iniciarSesion" :loading="loading">
                                     Ingresar
                                 </v-btn>
                             </v-col>
 
                             <!-- Crear cuenta (visible solo en móviles) -->
                             <v-col cols="12" class="d-md-none text-center mt-2">
-                                <NuxtLink to="/registro">
-                                    <v-btn variant="tonal" color="blue">Crear cuenta</v-btn>
+                                <NuxtLink to="/registro" class="boton-crear-cuenta">
+                                    <v-btn variant="outlined" color="secondary" block>Crear cuenta</v-btn>
                                 </NuxtLink>
                             </v-col>
 
-                              <!-- Botón: Ingresar -->
-                            <NuxtLink to="/recuperacionContrasena/validacionEmail" class="boton-crear-cuenta">
-                                    <v-btn color="white" variant="tonal" block>Recuperar contraseña</v-btn>
-                            </NuxtLink>
                         </v-row>
                     </v-form>
                 </v-col>
@@ -90,8 +86,8 @@
 
             <!-- Botón flotante visible en todas las resoluciones -->
             <div class="web-floating-link">
-                <a href="https://neuroar.com.co/" target="_blank" class="link-sitio">
-                    <v-btn color="blue-darken-2" class="text-white" prepend-icon="mdi-earth">
+                <a href="https://neuroar.com.co/" target="_blank" rel="noopener noreferrer" class="link-sitio">
+                    <v-btn variant="outlined" color="primary" prepend-icon="mdi-earth">
                         Visita nuestro sitio oficial
                     </v-btn>
                 </a>
@@ -177,9 +173,14 @@ export default {
 </script>
 
 <style scoped>
+/* Misma estética de neuroar.com.co: fondo oscuro, cian (acción) y violeta (marca).
+   Los colores salen del tema de Vuetify (plugins/vuetify.ts). */
 .full-height {
     height: 100vh;
-    background: #f5f5f5;
+    background:
+        radial-gradient(700px 500px at 50% 40%, rgba(167, 139, 250, 0.10), transparent 65%),
+        rgb(var(--v-theme-background));
+    overflow: hidden;
 }
 
 .left-col,
@@ -187,15 +188,19 @@ export default {
     overflow: hidden;
 }
 
+/* Arco de marca: degradado cian → violeta (antes azul #0066cc) */
 .semi-circulo {
     position: absolute;
     left: -100px;
     top: -80%;
     width: 500px;
     height: 1200px;
-    background: radial-gradient(circle, #0066cc, #003366);
+    background:
+        radial-gradient(circle at 70% 60%, rgba(232, 121, 249, 0.35), transparent 55%),
+        linear-gradient(160deg, #22d3ee 0%, #7c5cf0 55%, #2a1a6e 100%);
     border-radius: 140%;
     z-index: 1;
+    box-shadow: 0 0 120px rgba(167, 139, 250, 0.35);
 }
 
 .crear-cuenta {
@@ -204,26 +209,42 @@ export default {
     left: 70px;
     z-index: 30;
     color: white;
-    background: rgba(0, 102, 204, 0.7);
-    padding: 10px 40px;
-    border-radius: 8px;
+    background: rgba(5, 7, 15, 0.45);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 16px 32px;
+    border-radius: 18px;
 }
+
+.crear-cuenta p { margin-bottom: 12px; color: rgba(238, 242, 251, 0.85); }
 
 .formulario-login {
     width: 100%;
     max-width: 400px;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: none !important;
-    background: #f5f5f5 !important;
+    padding: 32px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(18, 26, 48, 0.85), rgba(11, 16, 32, 0.85)) !important;
+    border: 1px solid rgba(163, 177, 201, 0.16);
+    box-shadow: 0 40px 100px -40px rgba(34, 211, 238, 0.35) !important;
+    backdrop-filter: blur(12px);
+    position: relative;
+    z-index: 20;
 }
 
 .centrado-formulario {
+    padding: 0 16px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.enlace-recuperar {
+    color: rgb(var(--v-theme-primary));
+    text-decoration: none;
+    font-weight: 600;
+}
+.enlace-recuperar:hover { text-decoration: underline; }
 
 .hombre-img {
     left: -150px;
@@ -240,19 +261,13 @@ export default {
     z-index: 10;
 }
 
+/* Halo violeta detrás del niño para integrarlo al fondo oscuro */
+.right-col {
+    background: radial-gradient(420px 420px at 40% 60%, rgba(34, 211, 238, 0.14), transparent 70%);
+}
+
 .boton-crear-cuenta {
     text-decoration: none;
-}
-
-.boton-crear-cuenta .v-btn {
-    border: 2px solid white;
-    background: rgba(0, 102, 204, 0.5);
-    color: white;
-    font-weight: bold;
-}
-
-.boton-crear-cuenta .v-btn:hover {
-    background: rgba(0, 102, 204, 0.8);
 }
 
 .web-floating-link {
@@ -266,5 +281,10 @@ export default {
 
 .link-sitio {
     text-decoration: none !important;
+}
+
+.link-sitio .v-btn {
+    background: rgba(5, 7, 15, 0.7);
+    backdrop-filter: blur(8px);
 }
 </style>

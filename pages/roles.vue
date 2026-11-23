@@ -4,7 +4,7 @@
             <v-card-title>
                 <div class="d-flex align-center justify-space-between w-100">
                     <div class="d-flex align-center">
-                        <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                        <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                         <v-divider inset vertical class="ml-6"></v-divider>
                         <strong class="ml-4 text-h5 font-weight-bold">Gestión de roles</strong>
                     </div>
@@ -62,7 +62,7 @@
                 <v-card-title>
                     <div class="d-flex align-center justify-space-between w-100">
                         <div class="d-flex align-center">
-                            <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                            <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                             <v-divider inset vertical class="ml-6"></v-divider>
                             <strong
                                 class="ml-4 text-h5 font-weight-bold">{{ modoEdicion ? 'Editar role' : 'Crear role' }}</strong>
@@ -77,7 +77,7 @@
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="red" dark size="small" rounded="lg" variant="flat" @click="cerrarDialog()">
+                    <v-btn color="error" dark size="small" rounded="lg" variant="flat" @click="cerrarDialog()">
                         Cerrar
                     </v-btn>
                     <v-btn color="success" dark size="small" rounded="lg" variant="flat" @click="modoEdicion ? editarRole(datos) : crearRole()"

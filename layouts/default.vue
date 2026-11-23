@@ -4,7 +4,7 @@
             <div class="d-flex flex-column fill-height">
                 <div class="overflow-y-auto">
                     <v-col cols="12" class="d-flex justify-center">
-                        <v-img src="/imagenes/neuroar.png" contain max-height="150" max-width="250" />
+                        <v-img src="/imagenes/neuroar-claro.png" contain max-height="150" max-width="250" />
                     </v-col>
                     <v-list>
                         <template v-for="item in menu" :key="item.title">
@@ -21,7 +21,7 @@
                                     </v-list-item>
                                 </template>
                                 <v-list-item v-for="sub in item.children" :key="sub.title" link :to="sub.to" exact
-                                    :class="{ 'bg-blue-lighten-4': $route.path === sub.to }">
+                                   >
                                     <template v-slot:prepend>
                                         <v-icon color="AzulNeuro" size="20">{{ sub.icon || 'mdi-circle-small' }}
                                         </v-icon>
@@ -50,10 +50,10 @@
                 </div>
 
                 <div class="mt-auto">
-                    <v-divider color="blue"></v-divider>
+                    <v-divider></v-divider>
                     <v-list-item link :to="'/'" class="d-flex flex-column align-center">
                         <v-icon class="d-flex justify-center">
-                            <v-icon color="red" size="24">mdi-power</v-icon>
+                            <v-icon color="error" size="24">mdi-power</v-icon>
                         </v-icon>
                         <v-list-item-title class="text-body-2 font-weight-bold text-center">
                             Cerrar Sesión
@@ -67,7 +67,7 @@
             <v-app-bar-nav-icon @click="drawer = !drawer" />
             <v-spacer />
             <div class="d-flex align-center">
-                <strong>Bienvenido a NeuroAR - {{ user?.name || "Usuario Desconocido" }}</strong>
+                <strong>Bienvenido a <span class="neuro-grad-text">NeuroAr</span> · {{ user?.name || "Usuario Desconocido" }}</strong>
             </div>
             <v-spacer />
             <v-menu offset-y>
