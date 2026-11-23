@@ -4,7 +4,7 @@
             <v-card-title>
                 <div class="d-flex align-center justify-space-between w-100">
                     <div class="d-flex align-center">
-                        <img src="/public/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
+                        <img src="/imagenes/icono-logo.png" alt="Logo" height="70px" width="70px">
                         <v-divider inset vertical class="ml-6"></v-divider>
                         <strong class="ml-4 text-h5 font-weight-bold">Editar Usuario # {{datosUsuarios?.id}}</strong>
                     </div>
@@ -88,7 +88,7 @@
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="red" dark size="small" variant="flat" @click="$emit('cerrarDialogo')">Cerrar</v-btn>
+                <v-btn color="error" dark size="small" variant="flat" @click="$emit('cerrarDialogo')">Cerrar</v-btn>
                 <v-btn color="success" variant="flat" size="small" @click="actualizarPaciente()"
                     :loading="loadingActualizar">Actualizar</v-btn>
             </v-card-actions>

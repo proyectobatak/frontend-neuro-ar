@@ -1,0 +1,112 @@
+/* ==========================================================================
+   NeuroAr — estilos globales de la app (complementan el tema de Vuetify)
+   Misma identidad de neuroar.com.co: fondo oscuro, cian (acción) y violeta
+   (marca). Los colores salen de las variables del tema: rgb(var(--v-theme-*)).
+   ========================================================================== */
+
+:root {
+  --neuro-grad: linear-gradient(100deg, #22d3ee 0%, #a78bfa 55%, #e879f9 100%);
+  --neuro-line: rgba(163, 177, 201, 0.16);
+}
+
+html, body { background: rgb(var(--v-theme-background)); }
+
+.v-application {
+  font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;
+  background:
+    radial-gradient(900px 600px at 100% 0%, rgba(167, 139, 250, 0.08), transparent 60%),
+    radial-gradient(700px 500px at 0% 100%, rgba(34, 211, 238, 0.06), transparent 60%),
+    rgb(var(--v-theme-background)) !important;
+}
+.v-application .text-h1, .v-application .text-h2, .v-application .text-h3,
+.v-application .text-h4, .v-application .text-h5, .v-application .text-h6,
+.v-application h1, .v-application h2, .v-application h3 {
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* ---- Barra superior y menú lateral ------------------------------------- */
+.v-app-bar.v-toolbar {
+  background: rgba(5, 7, 15, 0.72) !important;
+  backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid var(--neuro-line);
+}
+.v-navigation-drawer {
+  background: rgb(var(--v-theme-surface)) !important;
+  border-right: 1px solid var(--neuro-line) !important;
+}
+.v-navigation-drawer .v-list-item--active {
+  background: rgba(34, 211, 238, 0.10);
+  box-shadow: inset 3px 0 0 rgb(var(--v-theme-primary));
+}
+.v-navigation-drawer .v-list-item--active .v-list-item__overlay { opacity: 0 !important; }
+
+/* ---- Superficies ------------------------------------------------------- */
+.v-card {
+  background: linear-gradient(180deg, rgba(18, 26, 48, 0.85), rgba(11, 16, 32, 0.85)) !important;
+  border: 1px solid var(--neuro-line);
+}
+.v-table, .v-data-table { background: transparent !important; }
+.v-table > .v-table__wrapper > table > thead > tr > th {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(238, 242, 251, 0.7) !important;
+}
+.v-overlay__scrim { background: rgba(3, 5, 12, 0.85) !important; }
+
+/* Botones de contorno con borde visible */
+.v-btn--variant-outlined { border-color: rgba(163, 177, 201, 0.35); }
+
+/* ---- Utilidad: texto con el degradado de la marca --------------------- */
+.neuro-grad-text {
+  background: var(--neuro-grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- SweetAlert2 con la misma paleta ----------------------------------- */
+.swal2-popup {
+  background: rgb(var(--v-theme-surface)) !important;
+  color: rgb(var(--v-theme-on-surface)) !important;
+  border: 1px solid var(--neuro-line);
+  border-radius: 20px !important;
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+}
+.swal2-title, .swal2-html-container { color: rgb(var(--v-theme-on-surface)) !important; }
+.swal2-styled { border-radius: 999px !important; font-weight: 700 !important; box-shadow: none !important; }
+.swal2-styled.swal2-confirm { background: rgb(var(--v-theme-primary)) !important; color: rgb(var(--v-theme-on-primary)) !important; }
+.swal2-styled.swal2-cancel { background: transparent !important; color: rgb(var(--v-theme-error)) !important; border: 1px solid rgb(var(--v-theme-error)) !important; }
+.swal2-styled.swal2-deny { background: rgb(var(--v-theme-error)) !important; color: rgb(var(--v-theme-on-error)) !important; }
+.swal2-icon.swal2-success { border-color: rgb(var(--v-theme-success)) !important; color: rgb(var(--v-theme-success)) !important; }
+.swal2-icon.swal2-success [class^='swal2-success-line'] { background-color: rgb(var(--v-theme-success)) !important; }
+.swal2-icon.swal2-success .swal2-success-ring { border-color: rgba(52, 211, 153, 0.3) !important; }
+.swal2-success-circular-line-left, .swal2-success-circular-line-right, .swal2-success-fix { background: transparent !important; }
+.swal2-icon.swal2-warning { border-color: rgb(var(--v-theme-warning)) !important; color: rgb(var(--v-theme-warning)) !important; }
+.swal2-icon.swal2-error { border-color: rgb(var(--v-theme-error)) !important; }
+.swal2-icon.swal2-error [class^='swal2-x-mark-line'] { background-color: rgb(var(--v-theme-error)) !important; }
+.swal2-icon.swal2-info, .swal2-icon.swal2-question { border-color: rgb(var(--v-theme-info)) !important; color: rgb(var(--v-theme-info)) !important; }
+.swal2-input, .swal2-textarea, .swal2-select {
+  background: rgb(var(--v-theme-background)) !important;
+  color: rgb(var(--v-theme-on-surface)) !important;
+  border: 1px solid rgba(163, 177, 201, 0.35) !important;
+  border-radius: 12px !important;
+}
+
+/* ---- Notificaciones (vue-toastification) ------------------------------- */
+.Vue-Toastification__toast {
+  background: rgb(var(--v-theme-surface-bright)) !important;
+  color: rgb(var(--v-theme-on-surface)) !important;
+  border: 1px solid var(--neuro-line);
+  border-left: 4px solid rgb(var(--v-theme-primary));
+  border-radius: 14px !important;
+  font-family: 'Space Grotesk', system-ui, sans-serif !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5) !important;
+}
+.Vue-Toastification__toast--success { border-left-color: rgb(var(--v-theme-success)); }
+.Vue-Toastification__toast--error { border-left-color: rgb(var(--v-theme-error)); }
+.Vue-Toastification__toast--warning { border-left-color: rgb(var(--v-theme-warning)); }
+.Vue-Toastification__toast--info { border-left-color: rgb(var(--v-theme-info)); }
+.Vue-Toastification__close-button, .Vue-Toastification__icon { color: inherit !important; }
+.Vue-Toastification__progress-bar { background: var(--neuro-grad) !important; }
