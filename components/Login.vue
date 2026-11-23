@@ -13,8 +13,8 @@
                             <v-btn color="white" variant="outlined" block>Crear cuenta</v-btn>
                         </NuxtLink>
                     </div>
-                    <v-img src="/imagenes/andres_login.png" alt="Hombre con VR" :height="'100%'"
-                        class="hombre-img"></v-img>
+                    <!-- Gafas de realidad virtual en 3D: se acercan al cargar, giran y se pueden arrastrar -->
+                    <VisorVR3D class="visor-login" />
                 </v-col>
 
                 <!-- Formulario -->
@@ -246,10 +246,9 @@ export default {
 }
 .enlace-recuperar:hover { text-decoration: underline; }
 
-.hombre-img {
-    left: -150px;
-    top: 60%;
-    transform: translateY(-50%) scale(2.0);
+.visor-login {
+    position: absolute;
+    inset: 150px 0 60px 0;
     z-index: 10;
 }
 
